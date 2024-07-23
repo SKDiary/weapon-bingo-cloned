@@ -71,6 +71,8 @@ export const bukiListNormal:Buki[] = [
     { id: 7020, lid: 9010, ja: "LACT-450", en: "REEF-LUX 450", original: "LACT-450", season: "0", rank: 10, sub: "curlingbomb", sp: "missile", type: "stringer",  },
     { id: 8000, lid: 10010, ja: "ジムワイパー", en: "Splatana Stamper", original: "ジムワイパー", season: "0", rank: 15, sub: "quickbomb", sp: "shokuwander", type: "splatana",  },
     { id: 8010, lid: 10000, ja: "ドライブワイパー", en: "Splatana Wiper", original: "ドライブワイパー", season: "0", rank: 5, sub: "torpedo", sp: "ultrahanko", type: "splatana",  },
+    { id: 8010, lid: 10000, ja: "ドライブワイパー", en: "Splatana Wiper", original: "ドライブワイパー", season: "0", rank: 5, sub: "torpedo", sp: "ultrahanko", type: "splatana",  },
+    { id: 9000, lid: 10000, ja: "フルイドV", en: "Splatana Wiper", original: "ドライブワイパー", season: "0", rank: 5, sub: "torpedo", sp: "ultrahanko", type: "splatana",  },
 ];
 
 export const bukiListGrizzco:Buki[] = [
