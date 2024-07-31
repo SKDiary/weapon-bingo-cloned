@@ -73,51 +73,6 @@
                     <input type="checkbox" name="settingsWeapons" value="hero" id="js-settingsWeapons__hero" class="c-checkbox__hidden"><label for="js-settingsWeapons__hero" class="c-checkbox__label"><span lang="ja">ヒーローブキ</span><span lang="en">Hero Weapons</span></label>
                 </div>
                 
-                <span>
-                    <img id="$img1" src="./img/icons/kinshi.webp" width="40" height="40">
-                    <img id="$img2" src="./img/icons/kinshi.webp" width="40" height="40">
-                    <img id="$img3" src="./img/icons/kinshi.webp" width="40" height="40">
-                    <img id="$img4" src="./img/icons/kinshi.webp" width="40" height="40">
-                    <script>
-                        $img1.onpointermove = function(event){
-                            if(event.buttons){
-                                this.style.left     = this.offsetLeft + event.movementX + 'px'
-                                this.style.top      = this.offsetTop  + event.movementY + 'px'
-                                this.style.position = 'absolute'
-                                this.draggable      = false
-                                this.setPointerCapture(event.pointerId)
-                            }
-                        }
-                        $img2.onpointermove = function(event){
-                            if(event.buttons){
-                                this.style.left     = this.offsetLeft + event.movementX + 'px'
-                                this.style.top      = this.offsetTop  + event.movementY + 'px'
-                                this.style.position = 'absolute'
-                                this.draggable      = false
-                                this.setPointerCapture(event.pointerId)
-                            }
-                        }
-                        $img3.onpointermove = function(event){
-                            if(event.buttons){
-                                this.style.left     = this.offsetLeft + event.movementX + 'px'
-                                this.style.top      = this.offsetTop  + event.movementY + 'px'
-                                this.style.position = 'absolute'
-                                this.draggable      = false
-                                this.setPointerCapture(event.pointerId)
-                            }
-                        }
-                        $img4.onpointermove = function(event){
-                            if(event.buttons){
-                                this.style.left     = this.offsetLeft + event.movementX + 'px'
-                                this.style.top      = this.offsetTop  + event.movementY + 'px'
-                                this.style.position = 'absolute'
-                                this.draggable      = false
-                                this.setPointerCapture(event.pointerId)
-                            }
-                        }
-                    </script>
-                </span>
-
                 <button type="button" class="c-button p-nav__button js-createBingoCard__buttons">
                     <span lang="ja">ビンゴカードを生成する</span>
                     <span lang="en">Generate the Bingo Card</span>
@@ -215,6 +170,52 @@
                         </div>
                     </div>
                 </div>
+
+                <span>
+                    <img id="$img1" src="./img/icons/kinshi.webp" width="40" height="40">
+                    <img id="$img2" src="./img/icons/kinshi.webp" width="40" height="40">
+                    <img id="$img3" src="./img/icons/kinshi.webp" width="40" height="40">
+                    <img id="$img4" src="./img/icons/kinshi.webp" width="40" height="40">
+                    <script>
+                        $img1.onpointermove = function(event){
+                            if(event.buttons){
+                                this.style.left     = this.offsetLeft + event.movementX + 'px'
+                                this.style.top      = this.offsetTop  + event.movementY + 'px'
+                                this.style.position = 'absolute'
+                                this.draggable      = false
+                                this.setPointerCapture(event.pointerId)
+                            }
+                        }
+                        $img2.onpointermove = function(event){
+                            if(event.buttons){
+                                this.style.left     = this.offsetLeft + event.movementX + 'px'
+                                this.style.top      = this.offsetTop  + event.movementY + 'px'
+                                this.style.position = 'absolute'
+                                this.draggable      = false
+                                this.setPointerCapture(event.pointerId)
+                            }
+                        }
+                        $img3.onpointermove = function(event){
+                            if(event.buttons){
+                                this.style.left     = this.offsetLeft + event.movementX + 'px'
+                                this.style.top      = this.offsetTop  + event.movementY + 'px'
+                                this.style.position = 'absolute'
+                                this.draggable      = false
+                                this.setPointerCapture(event.pointerId)
+                            }
+                        }
+                        $img4.onpointermove = function(event){
+                            if(event.buttons){
+                                this.style.left     = this.offsetLeft + event.movementX + 'px'
+                                this.style.top      = this.offsetTop  + event.movementY + 'px'
+                                this.style.position = 'absolute'
+                                this.draggable      = false
+                                this.setPointerCapture(event.pointerId)
+                            }
+                        }
+                    </script>
+                </span>
+
                 <div class="u-flexColumn u-noPrint">
                     <button type="button" id="js-downloadImg-button" class="c-button u-width100">
                         <span class="c-button__text-enabled">
