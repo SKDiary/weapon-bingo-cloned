@@ -172,6 +172,27 @@
                     </div>
                 </div>
 
+                <div class="u-flexColumn u-noPrint">
+                    <button type="button" id="js-downloadImg-button" class="c-button u-width100">
+                        <span class="c-button__text-enabled">
+                            <i class="ri-download-2-fill"></i>
+                            <span lang="ja">画像として保存する</span>
+                            <span lang="en">Save as Image</span>
+                        </span>
+                        <span class="c-button__text-disabled">
+                            <i class="ri-hourglass-line"></i>
+                            <span lang="ja">画像生成中</span>
+                            <span lang="en">Generating Image</span>
+                        </span>
+                    </button>
+                    
+                    <button type="button" onclick="window.print();" class="c-button u-width100">
+                        <i class="ri-printer-fill"></i>
+                        <span lang="ja">印刷する</span>
+                        <span lang="en">Print</span>
+                    </button>
+                </div>
+                
                 <div>
                     <span>
                         <img id="$img1" src="./img/icons/kinshi_blue.webp" width="40" height="40">
@@ -218,28 +239,6 @@
                         </script>
                     </span>
                 </div>
-
-                <div class="u-flexColumn u-noPrint">
-                    <button type="button" id="js-downloadImg-button" class="c-button u-width100">
-                        <span class="c-button__text-enabled">
-                            <i class="ri-download-2-fill"></i>
-                            <span lang="ja">画像として保存する</span>
-                            <span lang="en">Save as Image</span>
-                        </span>
-                        <span class="c-button__text-disabled">
-                            <i class="ri-hourglass-line"></i>
-                            <span lang="ja">画像生成中</span>
-                            <span lang="en">Generating Image</span>
-                        </span>
-                    </button>
-                    
-                    <button type="button" onclick="window.print();" class="c-button u-width100">
-                        <i class="ri-printer-fill"></i>
-                        <span lang="ja">印刷する</span>
-                        <span lang="en">Print</span>
-                    </button>
-                </div>
-                
                 
             </section>
         </article>
