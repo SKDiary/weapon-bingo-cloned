@@ -11,7 +11,7 @@ export interface cardType {
     element: HTMLElement,
     row: number,
     column: number,
-    done: boolean,
+    done: number,
 }
 
 // 保存用ビンゴデータ
@@ -19,7 +19,7 @@ export interface bingoType {
     row: number,
     column: number,
     item: string,
-    done: boolean
+    done: number
 }
 
 // localStorageData
@@ -43,5 +43,5 @@ export interface bingoObjType {
     row: number,
     column: number,
     item: string,
-    done: boolean
+    done: number
 }

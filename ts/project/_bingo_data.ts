@@ -25,6 +25,15 @@ export class BingoData {
     constructor(data:any = storageManager.getLocalStorageData()) {
         Object.assign(this, data);
         
+        // migration from boolean to number
+        if (this.myBingo && this.myBingo.length > 0) {
+            this.myBingo.forEach(item => {
+                if (typeof item.done === 'boolean') {
+                    item.done = item.done ? 1 : 0;
+                }
+            });
+        }
+        
         if (!this.language) {
             let language = (window.navigator.languages && window.navigator.languages[0]) || window.navigator.language;
             if (language == 'ja' || language == 'Ja' || language == 'ja-JP' || language == 'japanese' || language == 'ja-jp') {
@@ -41,6 +50,15 @@ export class BingoData {
     reloadLocalStorage = ()  => {
         const data = storageManager.getLocalStorageData();
         Object.assign(this, data);
+
+        // migration from boolean to number
+        if (this.myBingo && this.myBingo.length > 0) {
+            this.myBingo.forEach(item => {
+                if (typeof item.done === 'boolean') {
+                    item.done = item.done ? 1 : 0;
+                }
+            });
+        }
     }
 }
 export let bingoData = new BingoData();

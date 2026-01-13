@@ -46,7 +46,7 @@ export class BingoCreator {
                     buki = bukiList.splice(Math.floor(Math.random() * bukiList.length), 1)[0];
                 };
                 const itemName = 'weapon' + buki.lid;
-                newBingo.push({row: row, column: column, item: itemName, done: false});
+                newBingo.push({row: row, column: column, item: itemName, done: 0});
             };
         };
         
