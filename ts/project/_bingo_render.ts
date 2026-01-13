@@ -126,9 +126,14 @@ export class BingoRender {
                 boxTdEle.id = row + '-' + column;
                 boxTdEle.className = 'p-bingo__td';
                 boxTdEle.title = name;
-                if (myBingo[itemIndex].done) {
+                boxTdEle.dataset.weaponId = item.id.toString();
+                const doneState = myBingo[itemIndex].done;
+                if (doneState > 0) {
                     boxTdEle.classList.add('is-done');
                     doneCount++;
+                    if (doneState > 1) {
+                        boxTdEle.classList.add('is-painted');
+                    }
                 }
                 boxTdEle.addEventListener('click', () => callback(boxTdEle, itemIndex));
                 

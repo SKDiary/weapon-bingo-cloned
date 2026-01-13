@@ -85,13 +85,49 @@ class Bingo {
     
     // ビンゴクリック
     private click( element:HTMLElement, itemIndex:number, ) {
-        if ( element.classList.toggle('is-done') ) {
-            bingoData.myBingo[itemIndex].done = true;
-            bingoData.doneCount++;
-        } else {
-            bingoData.myBingo[itemIndex].done = false;
-            bingoData.doneCount--;
+        // myBingo[itemIndex].done
+        // 0: default
+        // 1: is-done
+        // 2: is-painted
+        let doneState = bingoData.myBingo[itemIndex].done;
+        if (isNaN(doneState)) {
+            doneState = 0;
         }
+
+        doneState++;
+        if (doneState > 2) {
+            doneState = 0;
+        }
+
+        const weaponImg = element.querySelector('.p-bingo__weaponImg') as HTMLImageElement;
+        const weaponId = element.dataset.weaponId;
+
+        switch (doneState) {
+            case 0:
+                element.classList.remove('is-done', 'is-painted');
+                if (weaponImg && weaponId) {
+                    weaponImg.src = './img/weapons/' + weaponId + '.webp';
+                }
+                bingoData.doneCount--;
+                break;
+            case 1:
+                element.classList.add('is-done');
+                element.classList.remove('is-painted');
+                if (weaponImg && weaponId) {
+                    weaponImg.src = './img/weapons/' + weaponId + '.webp';
+                }
+                bingoData.doneCount++;
+                break;
+            case 2:
+                element.classList.add('is-painted');
+                if (weaponImg) {
+                    weaponImg.src = './img/icons/kinshi_blue.webp';
+                }
+                // is-done is kept, doneCount is not changed
+                break;
+        }
+
+        bingoData.myBingo[itemIndex].done = doneState;
         
         const bingoCount = checkBingo();
         
