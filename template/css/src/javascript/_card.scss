@@ -18,7 +18,7 @@
     .is-done {
         background-color: transparent;
     }
-    .is-bingo {
+    .is-bingo:not(.is-painted) {
         background-image: url(../img/paint_bingo.webp);
     }
 }
@@ -34,7 +34,7 @@
     .is-done {
         background-color: transparent;
     }
-    .is-bingo {
+    .is-bingo:not(.is-painted) {
         background-image: url(../img/paint_bingo.webp);
     }
 }
@@ -66,7 +66,7 @@
             background-color: transparent;
         }
         
-        &.is-bingo {
+        &.is-bingo:not(.is-painted) {
             background-image: url(../img/paint_bingo.webp);
         }
     }
