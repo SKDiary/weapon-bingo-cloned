@@ -25,7 +25,7 @@ export function checkBingo(
         for (let column = 0; column < bingoCols; column++) {
             let index = row * bingoCols + column;
             bingoColsGroup[index] = row + '-' + column;
-            if (myBingo[index].done > 0) doneCount++;
+            if (myBingo[index].done === 1) doneCount++;
         }
         if (doneCount == bingoCols-1) reachGroups.push(bingoColsGroup);
         else if (doneCount == bingoCols) bingoGroups.push(bingoColsGroup);
@@ -38,7 +38,7 @@ export function checkBingo(
         for (let row = 0; row < bingoRows; row++) {
             let index = row * bingoCols + column;
             bingoRowsGroup[index] = row + '-' + column;
-            if (myBingo[index].done > 0) doneCount++;
+            if (myBingo[index].done === 1) doneCount++;
         }
         if (doneCount == bingoRows-1) reachGroups.push(bingoRowsGroup);
         else if (doneCount == bingoRows) bingoGroups.push(bingoRowsGroup);
@@ -53,11 +53,11 @@ export function checkBingo(
         for (let row = 0; row < bingoRows; row++) {
             let indexLTRB = row * bingoCols + row; 
             bingoLTRBGroup[indexLTRB] = row + '-' + row;
-            if (myBingo[indexLTRB].done > 0) doneCountLTRB++;
+            if (myBingo[indexLTRB].done === 1) doneCountLTRB++;
             
             let indexRTLB = row * bingoCols + (bingoRows - 1 - row); 
             bingoRTLBGroup[indexRTLB] = row + '-' + (bingoRows - 1 - row);
-            if (myBingo[indexRTLB].done > 0) doneCountRTLB++;
+            if (myBingo[indexRTLB].done === 1) doneCountRTLB++;
         }
         if (doneCountLTRB == bingoRows-1) reachGroups.push(bingoLTRBGroup);
         else if (doneCountLTRB == bingoRows) bingoGroups.push(bingoLTRBGroup);
