@@ -104,11 +104,10 @@ class Bingo {
 
         switch (doneState) {
             case 0:
-                element.classList.remove('is-done', 'is-painted');
+                element.classList.remove('is-painted');
                 if (weaponImg && weaponId) {
                     weaponImg.src = './img/weapons/' + weaponId + '.webp';
                 }
-                bingoData.doneCount--;
                 break;
             case 1:
                 element.classList.add('is-done');
@@ -119,11 +118,12 @@ class Bingo {
                 bingoData.doneCount++;
                 break;
             case 2:
+                element.classList.remove('is-done');
                 element.classList.add('is-painted');
-                if (weaponImg) {
-                    weaponImg.src = './img/icons/kinshi_blue.webp';
+                if (weaponImg && weaponId) {
+                    weaponImg.src = './img/weapons/' + weaponId + '.webp';
                 }
-                // is-done is kept, doneCount is not changed
+                bingoData.doneCount--;
                 break;
         }
 

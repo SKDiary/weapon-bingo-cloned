@@ -128,12 +128,12 @@ export class BingoRender {
                 boxTdEle.title = name;
                 boxTdEle.dataset.weaponId = item.id.toString();
                 const doneState = myBingo[itemIndex].done;
-                if (doneState > 0) {
+                if (doneState === 1) {
                     boxTdEle.classList.add('is-done');
                     doneCount++;
-                    if (doneState > 1) {
+                }
+                if (doneState === 2) {
                         boxTdEle.classList.add('is-painted');
-                    }
                 }
                 boxTdEle.addEventListener('click', () => callback(boxTdEle, itemIndex));
                 
