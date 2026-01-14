@@ -99,7 +99,7 @@ export class BingoRender {
         const headerTrEle = document.createElement('div');
         headerTrEle.className = 'p-bingo__tr';
         const emptyHeaderTdEle = document.createElement('div');
-        emptyHeaderTdEle.className = 'p-bingo__td-header';
+        emptyHeaderTdEle.className = 'p-bingo__td-header p-bingo__td-header--num';
         headerTrEle.appendChild(emptyHeaderTdEle);
 
         for (let column = 0; column < bingoCols; column++) {
@@ -115,7 +115,7 @@ export class BingoRender {
             boxTrEle.className = 'p-bingo__tr';
 
             const boxHeadTdEle: HTMLElement = document.createElement('div');
-            boxHeadTdEle.className = 'p-bingo__td-header';
+            boxHeadTdEle.className = 'p-bingo__td-header p-bingo__td-header--num';
             boxHeadTdEle.innerText = (row+1).toString();
             boxTrEle.appendChild(boxHeadTdEle);
             
