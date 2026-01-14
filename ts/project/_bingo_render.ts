@@ -94,11 +94,30 @@ export class BingoRender {
         tableEle.innerHTML = '';
         let doneCount = 0;
         if (myBingo.length<1) myBingo = BingoCreator.createNewBingo();
+
+        // header
+        const boxHeadTrEle: HTMLDivElement = document.createElement('div');
+        boxHeadTrEle.className = 'p-bingo__tr';
+        const boxHeadTdEle: HTMLElement = document.createElement('div');
+        boxHeadTdEle.className = 'p-bingo__td-header';
+        boxHeadTrEle.appendChild(boxHeadTdEle);
+        for (let column = 0; column < bingoCols; column++) {
+            const boxHeadTdEle: HTMLElement = document.createElement('div');
+            boxHeadTdEle.className = 'p-bingo__td-header';
+            boxHeadTdEle.innerText = String.fromCharCode(97 + column);
+            boxHeadTrEle.appendChild(boxHeadTdEle);
+        }
+        tableEle.appendChild(boxHeadTrEle);
         
         // 描写開始
         for (let row = 0; row < bingoRows; row++) {
             const boxTrEle: HTMLDivElement = document.createElement('div');
             boxTrEle.className = 'p-bingo__tr';
+
+            const boxHeadTdEle: HTMLElement = document.createElement('div');
+            boxHeadTdEle.className = 'p-bingo__td-header';
+            boxHeadTdEle.innerText = (row+1).toString();
+            boxTrEle.appendChild(boxHeadTdEle);
             
             for (let column = 0; column < bingoCols; column++) {
                 const itemIndex:number = bingoCols * row + column;
