@@ -1,6 +1,16 @@
 # random_weapon_bingo_NW
 
-how to publish
+## how to build
+
+<!-- jsのコンパイル -->
+npx webpack --config webpack.prod.js
+<!-- scssのコンパイル -->
+npx sass template/css/style.scss template/css/style.min.css --style=compressed
+<!-- まとめる -->
+php html_template/make.php
+
+
+## how to publish
 
 git checkout -b BRANCH-NAME
 git add .
