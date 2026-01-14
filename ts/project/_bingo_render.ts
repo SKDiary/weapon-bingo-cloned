@@ -95,21 +95,21 @@ export class BingoRender {
         let doneCount = 0;
         if (myBingo.length<1) myBingo = BingoCreator.createNewBingo();
 
-        // header
-        const boxHeadTrEle: HTMLDivElement = document.createElement('div');
-        boxHeadTrEle.className = 'p-bingo__tr';
-        const boxHeadTdEle: HTMLElement = document.createElement('div');
-        boxHeadTdEle.className = 'p-bingo__td-header';
-        boxHeadTrEle.appendChild(boxHeadTdEle);
-        for (let column = 0; column < bingoCols; column++) {
-            const boxHeadTdEle: HTMLElement = document.createElement('div');
-            boxHeadTdEle.className = 'p-bingo__td-header';
-            boxHeadTdEle.innerText = String.fromCharCode(97 + column);
-            boxHeadTrEle.appendChild(boxHeadTdEle);
-        }
-        tableEle.appendChild(boxHeadTrEle);
-        
         // 描写開始
+        const headerTrEle = document.createElement('div');
+        headerTrEle.className = 'p-bingo__tr';
+        const emptyHeaderTdEle = document.createElement('div');
+        emptyHeaderTdEle.className = 'p-bingo__td-header';
+        headerTrEle.appendChild(emptyHeaderTdEle);
+
+        for (let column = 0; column < bingoCols; column++) {
+            const headerTdEle = document.createElement('div');
+            headerTdEle.className = 'p-bingo__td-header';
+            headerTdEle.innerText = String.fromCharCode('a'.charCodeAt(0) + column);
+            headerTrEle.appendChild(headerTdEle);
+        }
+        tableEle.appendChild(headerTrEle);
+
         for (let row = 0; row < bingoRows; row++) {
             const boxTrEle: HTMLDivElement = document.createElement('div');
             boxTrEle.className = 'p-bingo__tr';
